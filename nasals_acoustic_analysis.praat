@@ -1,21 +1,54 @@
-
 #	nasals.praat (2025)
-#	
-# 
-# 								INSTRUCTIONS
-#	0. You need a .wav (with an optional Textgrid saved in the same folder and with at least 1 interval tier).
-#	1. Run
-#	2. FORM EXPLANATIONS:
-#		In the first field you must write the path of the folder where your files are kept
-# 			in a mac something like: /Users/yourName/Desktop
-# 			for windows: C:\Users\yourUserName\Desktop
-# 			if you have a linux, you don't need me to tell you your path
-#		
-#	2. OUTPUT: txt file saves in the same folder as the data with:
-#  "Filename", tab$, "duration", tab$, "f0_mean", tab$,  "jitter", tab$,  "shimmer", tab$,  "HNR",tab$,  "voice_breaks",tab$, "locallyunvoiced", tab$, "H1_dB", tab$, "H2_dB", tab$, "H1-H2", tab$, "spectral_peak"
-#	
-# 	You can find threshold values for whatsapp recordings with this settings at https://github.com/wendyelviragarcia/voice_quality
 #
+#								INSTRUCTIONS
+#
+#	0. Requirements
+#	   You need a `.wav` file. Optionally, you may also have a `.TextGrid`
+#	   with the same base name stored in the same folder. If a TextGrid
+#	   is present, it must contain at least one interval tier.
+#
+#	1. Run the script
+#	   Open the script in Praat and click Run > Run.
+#
+#	2. FORM EXPLANATIONS
+#
+#	   Folder
+#	   In the first field you must write the path of the folder where
+#	   your files are stored.
+#
+#	   Examples:
+#	       macOS:   /Users/yourName/Desktop
+#	       Windows: C:\Users\yourUserName\Desktop
+#	       Linux:   (you probably already know your path)
+#
+#	   Tier
+#	   If you are using TextGrids, specify the interval tier that
+#	   contains the nasal segments to be analysed.
+#
+#	   Label
+#	   Indicate the label used in the tier for nasal segments
+#	   (for example: m, n, ŋ, or any label used in your annotation).
+#
+#	3. OUTPUT
+#
+#	   The script creates a `.txt` file saved in the same folder as
+#	   the data. The file contains one line per analysed token with:
+#
+#	       • file name
+#	       • interval label
+#	       • time boundaries of the segment
+#	       • acoustic measurements extracted by the script
+#
+#	   The output file can be opened with any text editor or imported
+#	   into spreadsheet software (Excel BEWARE DECIMAL SEPARATOR IS ., LibreOffice, R, etc.).
+#
+#	4. Notes
+#
+#	   • `.wav` and `.TextGrid` files must share the same base name
+#	     (e.g. `speaker01.wav` and `speaker01.TextGrid`).
+#	   • All files should be located in the same folder specified
+#	     in the form.
+#	   • The script processes all matching files in that folder.
 #
 #
 # Any feedback is welcome, please if you notice any mistakes or come up with anything that can improve this script, let me know!
